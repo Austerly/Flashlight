@@ -19,7 +19,22 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    var isOn = false
+    @IBAction func buttonTapped(sender: AnyObject) {
+        if !isOn {
+            isOn = true
+            sender.setTitle("Off", forState: UIControlState.Normal)
+            sender.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+            self.view.backgroundColor = UIColor.whiteColor()
+            
+        } else {
+            isOn = false
+            sender.setTitle("On", forState: UIControlState.Normal)
+            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            self.view.backgroundColor = UIColor.blackColor()
+        }
+        
+    }
 
 }
 
